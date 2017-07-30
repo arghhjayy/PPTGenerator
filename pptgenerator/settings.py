@@ -32,7 +32,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_y2@*!c92suev6ke%1j%!%-_9@%mw_(n386k1$hb@hij!s_ow0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['ppt-generator.herokuapp.com', '127.0.0.1']
 

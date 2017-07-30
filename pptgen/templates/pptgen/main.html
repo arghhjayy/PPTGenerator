@@ -1,29 +1,430 @@
 <!DOCTYPE html>
-{% load static %}
+<!--{% load static %} -->
 <html>
     <head>
-        <meta charset="utf-8">
+       <meta charset="utf-8">
+       <meta http-equiv="X-UA-Compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <meta name="description" content="">
+       <meta name="author" content="">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+       <link rel="stylesheet" href="{% static 'pptgen/css/animate.css' %}">
+
         <title>PPT Generator</title>
+        <!-- Custom styles for carausel -->
+
+
+        <link href="{% static 'pptgen/css/carousel.css' %}" rel="stylesheet">
+
+    <style type="text/css">
+
+        h2 {
+          font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+          font-size: 24px;
+          font-style: normal;
+          font-variant: small-caps;
+          font-weight: 500;
+          line-height: 26.4px;
+          letter-spacing: 0.5px;
+        }
+
+        p {
+          font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+          font-size: 14px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 400;
+          line-height: 20px;
+        }
+        h1 {
+          font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+          font-size: 35px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 500;
+          line-height: 26.4px;
+        }
+        h3 {
+          font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+          font-size: 14px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 500;
+          line-height: 15.4px;
+        }
+        .topicbox{
+            
+            font-family: 
+           }
+
+        .form-control1{
+              border-radius: 0px;
+              resize: horizontal;
+              
+              border: none;
+              border-bottom: 2px solid #101010;
+              border-right: 2px solid #101010;
+              outline: none;
+              box-sizing: border-box;
+              -webkit-transition: 0.5s;
+              transition: 0.5s;
+
+
+            }
+
+        .navbar {
+            position: relative;
+            background-color: transparent;
+            background: transparent;
+            border-color: transparent;
+            padding-top: 6px;
+            padding-bottom: 15px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 12px;
+            letter-spacing: 5px;
+            -webkit-box-shadow: 0 8px 6px -6px #999;
+            -moz-box-shadow: 0 8px 6px -6px #999;
+            box-shadow: 0 6px 4px -6px #999;  
+            height: 60px;
+        }
+
+        .custom-brand a{
+             
+             color:  #ffffff !important;
+        }
+
+        .navbar a:hover {
+            color:  #282828 !important;
+        }
+
+
+
+
+        .button {
+          border-radius: 0px;
+          background-color: #202020;
+          border: none;
+          color: #FFFFFF;
+          text-align: center;
+          font-size: 22px;
+          padding: 9px;
+          width: 110px;
+          transition: all 0.5s;
+          cursor: pointer;
+          margin: 13px;
+        }
+
+        .button span {
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          transition: 0.5s;
+        }
+
+        .button span:after {
+          content: '\00bb';
+          position: absolute;
+          opacity: 0;
+          top: 0;
+          right: -20px;
+          transition: 0.5s;
+        }
+
+        .button:hover span {
+          padding-right: 25px;
+        }
+
+        .button:hover span:after {
+          opacity: 1;
+          right: 0;
+        }
+
+               
+        .button5:hover {
+            box-shadow: 0 15px 20px 0 rgba(0,0,0,0.24),0 22px 30px 0 rgba(0,0,0,0.19);
+        }
+         
+        footer {
+              background-color: #2d2d30;
+              color: #f5f5f5;
+              padding: 32px;
+          }
+        footer a {
+              color: #f5f5f5;
+          }
+        footer a:hover {
+              color: #777;
+              text-decoration: none;
+          }
+
+        .copyright {
+            margin: 0;
+            padding: 0;
+         }
+        .copyright li {
+            display: inline-block;
+            margin: 0;
+            line-height: 15px;
+
+            font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
+          font-size: 14px;
+          font-style: normal;
+          font-variant: normal;
+          font-weight: 400;
+          line-height: 20px;
+            
+        }
+        .copyright li {
+           display: inline;
+        }
+        .copyright li:before {
+            content: "\2022";
+            padding-left: 10px;
+            padding-right: 10px;
+            color: #095153;
+            
+        }
+
+        footer a, footer a:visited { color: #525252; }
+        footer a:hover, footer a:focus { color: #fff; text-decoration: underline;}
+        
+        .tooltip1 {
+    position: relative;
+}
+
+.tooltip1 .tooltip1text {
+    visibility: hidden;
+    width: 300px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: 160px;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip1 .tooltip1text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.tooltip1:hover .tooltip1text {
+    visibility: visible;
+    opacity: 1;
+}
+
+      </style>
+    
     </head>
-    <body>
+
+<body id="myPage" background="{% static 'pptgen/images/image4.png' %}">
+        <!--navigation bar starts-->
+          <nav class="navbar navbar-default navbar-fixed-top" >
+            <div class="container">
+              <div class="navbar-header">
+                <a class="navbar-brand custom-brand" href="#">PPT GENERATOR</a>
+              </div>
+            </div>
+          </nav> 
+        <!--navigation ba ends-->  
+
+
+      <!---
+        <div class="container" style="margin-top:65px" align="center" >
+        <div class="alert alert-danger alert-dismissable fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <h3><strong>Warning!</strong> Only compatible for topics which are available on <strong>Wikipedia.</strong></h3>
+        </div>
+       </div>-->
+
+
+
+ <!-- Carousel ================================================== -->
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide" src="{% static 'pptgen/images/image1.jpg' %}" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+                <div class="caption5" style="margin-bottom: 25px">
+                  <h1 class="animated fadeInDown"><span style="font-weight: bold;">Welcome! </span>we're so glad you're here</h1>
+               <h2 style="font-variant: normal;">"If you love life, don't waste time, for time is what life is made up of."<br>-Bruce Lee</h2>
+                </div>
+                <div class="imageicon">
+                  <img class="animated flip" src="{% static 'pptgen/images/ppticon.png' %}" alt="powerpoint icon">
+                </div>
+                <div class="caption4">
+                  <span><h2 class="animated zoomIn" style="font-weight: bold;">Want to make PPT, simply follow the steps.</h2></span>
+                </div>
+                <h2 class="animated fadeInUp">Yes, we know how it's boring and frustrating to make an powerpoint presentation.</h2>
+
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="second-slide" src="{% static 'pptgen/images/image2.jpg' %}" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <div class="numberCircle">01</div>
+                <div class="caption1">
+                <h1 class="animated fadeInLeftBig">Go to <span style="font-weight: bold;">Wikipedia</span></h1>
+                </div>
+                <div class="imagewiki1">
+                <img class="animated flipInX" src="{% static 'pptgen/images/wiki.png' %}" alt="Wikipedia logo">
+                </div>
+                
+                <div class="imagewiki2">
+                <img class="animated flipInX" src="{% static 'pptgen/images/searchwiki.png' %}" alt="Wikipedia Search">
+                </div>
+                <div style="position: absolute; bottom: 200px; left: 350px;">
+                  <h1>&</h1>
+                </div>
+                <div class="caption2">
+                <h1 class="animated fadeInRightBig">Enter your topic in <span style="font-weight: bold;">Search</span></h1>
+                </div>
+                <a href="https://www.wikipedia.org/" target="_blank"><button type="button" class="btn btn-default custom-button">
+                <span class="animated bounceIn glyphicon glyphicon-hand-right"></span><span> Wiki</span>
+                </button></a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img class="third-slide" src="{% static 'pptgen/images/image3.jpg' %}" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <div class="numberCircle">02</div>
+                <div class="caption1">
+                <h1 class="animated fadeInLeftBig">Copy the article <span style="font-weight: bold;">title</span></h1>
+                </div>
+                <div class="imagewiki1">
+                <img class="animated flipInX" src="{% static 'pptgen/images/wiki-article.png' %}" alt="Wikipedia logo">
+                </div>
+                
+                <div class="imagewiki22">
+                <img class="animated flipInX" src="{% static 'pptgen/images/enter-topic-image.png' %}" alt="Wikipedia Search">
+                </div>
+                <div style="position: absolute; bottom: 180px; left: 300px;">
+                  <h1>&</h1>
+                </div>
+                <div class="caption21">
+                <h1 class="animated fadeInRightBig">Paste it into the topic box and click <span style="font-weight: bold;">Go</span></h1>
+                </div>
+                <a href="https://www.wikipedia.org/" target="_blank"><button type="button" class="btn btn-default custom-button">
+                <span class="animated bounceIn glyphicon glyphicon-hand-right"></span><span> Wiki</span>
+                </button></a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!--carousel ends here-->
+   
+
+ <!--topic box starts-->
+   <div class="topicbox">
+      <div class="container">
         <center>
-            <h1 style="color: red">Warning: Only compatible for topics which are available in Wikipedia</h1>
-            <p>Mitron alpha version hai, drop them bugs here</p>
-            <h2>Steps to use this shit</h2>
-            <p>1) Go to <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a></p>
-            <p>2) Enter your topic in search</p>
-            <p>3) Copy-paste the article title in the topic box and click "Submit"</p>
-            <img src="{% static "pptgen/Images/spongebob.jpg" %}" alt="title_example">
-            <figcaption>An example of a title</figcaption>
             <form method="post">
                 {% csrf_token %}
-                <p>Enter topic:
-                <input type="text" name="ppt_topic" value="">
-                <button type="submit" name="submitButton">
-                    Submit
-                </button>
+                <p style="margin-top: 50px;"><h2>Enter Topic</h2>
+                 <a style="color: #202020"><span class="glyphicon glyphicon-triangle-bottom" style="font-size:60px;"></span></a>
+
+                <div class="tooltip1">
+                <input type="text" name="ppt_topic" value="" class="form-control form-control1" id="usr" style="margin-top: 15px;">
+                <span class="tooltip1text"><h3>Make sure that entered topic is the same as copied.</h3></span>
+                </div>
+                
+               <button type="submit" name="submitButton" class="button button5" style="margin-top: 20px; "><span>Go</span></button>
+
+  
             </form>
-            <p>4) Have patience</p>
         </center>
+      </div> 
+    </div> 
+  
+
+      <!--footer starts-->
+        <footer class="text-center">
+          <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+          </a><br><br>
+       
+          <div class="copyright">
+                      <li>
+                        pptgenerator &copy; Copyright 2017
+                      </li>
+                      <li>
+                          Design by <a target="_blank" style="color: black" href="https://www.facebook.com/roshan.kadu.180">Roshan Kadu</a> | Back-end by <a target="_blank" style="color: black;" href="https://www.github.com/arghhjayy">Rupanshu Janbandhu</a>
+                      </li>
+          </div>       
+        </footer>
+        
+ 
+    
+
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip(); 
+  
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        //window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+   
     </body>
 </html>

@@ -1,0 +1,10 @@
+{% load static %}
+
+<html>
+    <p>
+        Your ppt has been made
+            Click
+            <a href="{% static "pptgen/PPTS/"|add:ppt_topic|add:".pptx" %}" download>here</a>
+            to download the file.
+    </p>
+</html>

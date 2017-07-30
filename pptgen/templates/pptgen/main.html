@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>PPT Generator</title>
+    </head>
+    <body>
+        <center>
+            <h1 style="color: red">Warning: Only compatible for topics which are available in Wikipedia</h1>
+            <p>Mitron alpha version hai, drop them bugs here</p>
+            <h2>Steps to use this shit</h2>
+            <p>1) Go to <a href="https://www.wikipedia.org" target="_blank">Wikipedia</a></p>
+            <p>2) Enter your topic in search</p>
+            <p>3) Copy-paste the article title in the topic box and click "Submit"</p>
+            <img src="{% static "pptgen/Images/spongebob.jpg" %}" alt="title_example">
+            <figcaption>An example of a title</figcaption>
+            <form method="post">
+                {% csrf_token %}
+                <p>Enter topic:
+                <input type="text" name="ppt_topic" value="">
+                <button type="submit" name="submitButton">
+                    Submit
+                </button>
+            </form>
+            <p>4) Have patience</p>
+        </center>
+    </body>
+</html>

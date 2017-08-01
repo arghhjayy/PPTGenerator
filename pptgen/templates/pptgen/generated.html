@@ -75,7 +75,7 @@
         <div class="row" style="margin-top: 0px;">
             <center>
             	<h1>Done!</h1><img src="{% static 'pptgen/images/checkmark.png' %}">
-		        <h2 style="margin-top: 0px;">Your powerpoint presentation has been made.</h2>
+		        <h2 style="margin-top: 0px;">Your powerpoint presentation on {{ ppt_topic }} has been made.</h2>
 		            <h3>Click to download the file.</h3>
 		            <a href="{% static "pptgen/PPTS/"|add:ppt_topic|add:".pptx" %}" download class="btn btn-lg" style="margin-top: 20px;">
          					<span class="glyphicon glyphicon-cloud-download"></span> Download

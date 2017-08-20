@@ -1,92 +1,198 @@
-{% load static %}
+{% load static %} 
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- Bootstrap Core CSS -->
-    <link href="{% static 'pptgen/css/bootstrap.min.css' %}" rel="stylesheet">
-    <link href="{% static 'pptgen/css/bootstrap.css' %}" rel="stylesheet" media="screen">
 
+        <!-- Favicons -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'pptgen/images/new/favicons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'pptgen/images/new/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'pptgen/images/new/favicons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'pptgen/images/new/favicons/manifest.json' %}">
+    <link rel="mask-icon" href="{% static 'pptgen/images/new/favicons/safari-pinned-tab.svg' %}" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff"> 
+  
+    <!--Favicons end -->
+
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Bellefair" rel="stylesheet"> 
     <title>Download Ready</title>
+
+    <!-- Bootstrap Core CSS -->
+
+
+    <link href="{% static 'pptgen/css/new/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <style>
     body {
         padding-top: 70px;
-        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+        
     }
-    h2 {
-          font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-          font-size: 24px;
-          font-style: normal;
-          font-variant: normal;
-          font-weight: 500;
-          line-height: 26.4px;
+    h1, h2, h3,h4,p {
+        font-family: 'Bellefair', serif;
+    }
+    .btn {
+       background-color: #202020 !important;
+       border-color: #202020;
+       color: white;
+       border-radius: 0px;   
+    }
+    p {
+      text-align: center;
+      font-size: 60px;
+    }
+    @media (min-width: 300px) { 
+      body {
+        padding-top: 20px;
+        padding: 20px;       
+    }
+    .great-job{
+        font-weight: bolder;
+        font-size: 30px;
+    }
+    .have-patience{
+        font-size: 25px;
+    }
+    .seconds{
+        line-height: 30px;
+        font-size: 25px;
+    }
+    .timer1{
+        font-weight: bolder;
+    }
+    .checkmark{
+        width: 70px; 
+        height: 70px;
+    }
+    .made{
+        margin-top: 0px;
+        font-size: 25px;        
+     }
+    .click-download{
+        font-size: 15px;
+    }
+
+ }
+
+    @media (min-width: 1200px){
+      body {
+        padding-top: 70px;      
+    }
+      .great-job{
+           font-weight: bolder;
+           font-size: 50px;
+        }
+      .have-patience{
+          font-size: 35px;
+        }
+      .seconds{
+          line-height: 50px;
+          font-size: 35px;
+        }
+      .timer1{
+          font-weight: bolder;
+          font-size: 50px;
+        }
+      .checkmark{
+          width: 180px; 
+          height: 180px;
+        }
+      .made{
+          margin-top: 0px;
+          font-size: 35px;
+        }
+      .click-download{
+          font-size: 25px;
         }
 
-        p {
-          font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-          font-size: 14px;
-          font-style: normal;
-          font-variant: normal;
-          font-weight: 400;
-          line-height: 20px;
-        }
-        h1 {
-          font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-          font-size: 40px;
-          font-style: normal;
-          font-variant: normal;
-          font-weight: 500;
-          line-height: 26.4px;
-        }
-        h3 {
-          font-family: Avant Garde,Avantgarde,Century Gothic,CenturyGothic,AppleGothic,sans-serif;
-          font-size: 20px;
-          font-style: normal;
-          font-variant: normal;
-          font-weight: 500;
-          line-height: 15.4px;
-        }
-       
-       .btn {
-       	background-color: #202020 !important;
-       	border-color: #202020;
-       	color: white;
-       	border-radius: 0px;
-
-       }
-       .a: hover{
-       	background-color: red;
-       }
-    </style>																																																																																																				
+    }
+    </style>																																									
 </head>
 
-<body background="{% static 'pptgen/images/generated-bg1.jpg' %}">
+<body background="{% static 'pptgen/images/new/generated-bg1.jpg' %}">
     <!-- Page Content -->
     <div class="container">
-
         <div class="row" style="margin-top: 0px;">
             <center>
-            	<h1>Done!</h1><img src="{% static 'pptgen/images/checkmark.png' %}">
-		        <h2 style="margin-top: 0px;">Your powerpoint presentation on {{ ppt_topic }} has been made.</h2>
-		            <h3>Click to download the file.</h3>
-		            <a href="{% static "pptgen/PPTS/"|add:ppt_topic|add:".pptx" %}" download class="btn btn-lg" style="margin-top: 20px;">
-         					<span class="glyphicon glyphicon-cloud-download"></span> Download
-       			    </a>
-		            
-    		</center>
+              <h1 class="great-job">Great! Your PPT request is now under consideration </h1>
+              <h2 class="have-patience">Have patience, your PPT is being ready.</h2>
+              <h2 class="seconds">Coming right up in <span class="timer1"><div id="timer">29</div></span>
+              seconds</h2>
+            	<div id="readytodonwload" style="display:none;">
+                 <img class="checkmark" src="{% static 'pptgen/images/new/checkmark.png' %}">
+                 <h2 class="made">Your powerpoint presentation has been made.</h2>
+                 <h3 class="click-download">Click to download the file.</h3>
+                 <a href="{% static "pptgen/PPTS/"|add:ppt_topic|add:".pptx" %}" download class="btn btn-lg" style="margin-top: 08px; font-family: 'Bellefair', serif;">
+                 <span class="glyphicon glyphicon-cloud-download"></span> Download
+                 </a>
+              </div>
+        		</center>
         </div>
-        <!-- /.row -->
+     <!-- /.row -->
 
     </div>
     <!-- /.container -->
+    
+    <script>
+      var Timer = function(opts) {
+      var self = this;
+
+      self.opts     = opts || {};
+      self.element  = opts.element || null;
+      self.seconds  = opts.seconds || 30;
+
+      self.start = function() {
+        self.interval = setInterval(countDown, 1000);
+      };
+
+      self.stop = function() {
+        clearInterval(self.interval);
+      };
+
+      function countDown() {
+        self.seconds--;
+        if (self.seconds == 0) {
+          self.stop();
+        }
+
+        if (self.seconds < 0) {
+          self.seconds = 59;
+          
+        }
+
+        if (self.seconds <= 9) { self.seconds = '0' + self.seconds; }
+
+        self.element.textContent =  self.seconds;
+      }
+    };
+
+    var myTimer = new Timer({
+
+      seconds: 29,
+      element: document.querySelector('#timer')
+    });
+
+    myTimer.start();
+    </script>
+
+    <script>
+      $(function(){
+
+      setTimeout(function(){ 
+          $("#readytodonwload").show();
+      }, 29000);
+
+    });
+    </script>
 
 </body>
 

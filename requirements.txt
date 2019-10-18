@@ -4,7 +4,7 @@ gunicorn==19.7.1
 Pillow==3.1.2
 python-pptx==0.5.7
 requests==2.12.4
-urllib3==1.21.1
+urllib3==1.24.2
 virtualenv==15.1.0
 whitenoise==3.3.0
 wikipedia==1.4.0

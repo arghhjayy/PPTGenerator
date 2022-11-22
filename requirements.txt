@@ -1,7 +1,7 @@
 dj-database-url==0.4.2
 Django==1.10.5
 gunicorn==19.7.1
-Pillow==3.1.2
+Pillow==9.3.0
 python-pptx==0.5.7
 requests==2.12.4
 urllib3==1.21.1
